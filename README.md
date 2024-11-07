@@ -4,9 +4,9 @@
 
 (GPIO pins:pinout.png , 4x4 keyboard pinout:4x4 keyboard .png)
 # Step 1
-connect the row pins of the membrane[R1 , R2 , R3 , R4 ] to the GPIO pins [6 , 13 , 19 , 26]
+Connect the row pins of the membrane[R1 , R2 , R3 , R4 ] to the GPIO pins [6 , 13 , 19 , 26]
 # Step 2
-connect the column pins [C1 , C2 , C3 , C4] to GPIO pins [ 12 , 16 , 20 , 21 ] 
+Connect the column pins [C1 , C2 , C3 , C4] to GPIO pins [ 12 , 16 , 20 , 21 ] 
 (refer the images for correct pin positions)
     
     R1, R2, R3, R4 = 6, 13, 19, 26  # Row pins
@@ -15,8 +15,8 @@ connect the column pins [C1 , C2 , C3 , C4] to GPIO pins [ 12 , 16 , 20 , 21 ]
 # Software Installation steps
 # Step 1
 
-Firstly install python 3 
-open terminal and type the following commands
+Firstly install python 3.
+Open terminal and type the following commands
 
     sudo apt-get update
     
@@ -25,8 +25,8 @@ open terminal and type the following commands
     sudo apt install python3
 
 # Step 2
-create a file named 4x4.py in the folder on the raspberry pi(you can use python editor or Thonny(has better support for gpio) for creating). 
-write the following code on the file. 
+Create a file named 4x4.py in the folder on the raspberry pi(you can use python editor or Thonny(has better support for gpio) for creating). 
+Write the following code on the file. 
 
     # Import required libraries
     import RPi.GPIO as GPIO
@@ -96,23 +96,23 @@ write the following code on the file.
         print("\nApplication stopped!")
     finally:
         GPIO.cleanup()  # Reset GPIO settings on exit
-you canalso map other keys in this code 
+You can also map other keys in this code 
 # Step 3
-create another file on the same folder named 4x4.sh and write the following 
+Create another file on the same folder named 4x4.sh and write the following 
     
     #!/bin/bash
     python3 4x4.py
 
-press ctrl+x and y and enter to save
+Press ctrl+x and y and enter to save
 # Step 4 
-make the 4x4.sh file executable.
-open terminal and type 
+Make the 4x4.sh file executable.
+Open terminal and type 
 
     chmod +x 4x4.sh
 
-press enter.
-now the file should be executable 
-now you can execute the file my either double clicking or type:
+Press enter.
+Now the file should be executable 
+Now you can execute the file my either double clicking or type:
 
     bash 4x4.sh
     or 
@@ -121,7 +121,7 @@ now you can execute the file my either double clicking or type:
 # Additional steps (Do only if you want to make the file run at startup)
 
 If you want to make the script run on the startup 
-edit /home/pi/.bash_profile
+Edit /home/pi/.bash_profile
 
     sudo nano /home/pi/.bash_profile
 
@@ -132,7 +132,7 @@ and write this line
     	startx
     fi
 
-press ctrl+x and y and enter to save
+press ctrl+x and y and enter to save.
 Next open terminal and type 
 
     sudo nano /home/pi/.xinitrc
@@ -143,10 +143,11 @@ and type the following :
 
     exec ./4x4.sh &
 
-press ctrl+x and y and enter to save
+Press ctrl+x and y and enter to save
+Or the .xinitrc file with the code is given just download the file and paste it in the /home/pi/ directory 
 
 # Step 5
 
-After all restart the system 
-if you did the additional steps open any window which receives keyboard signals and press the keyboard keys 
-if you did everythng right the keys should print the ones they are mapped with
+After all steps restart the system 
+If you did the additional step , open any window which receives keyboard signals(eg:chromium,text editor) and press the keyboard keys 
+If you did everythng right the keys should print the ones they are mapped with
