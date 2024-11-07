@@ -1,4 +1,6 @@
 # 4x4-membrane-driver
+# Connecting the 4x4 membrane to the raspberry pi
+
 # Installation steps
 # Step 1
 
@@ -105,7 +107,7 @@ now you can execute the file my either double clicking or type:
     or 
     sudo exec ./4x4.sh
 
-# Additional steps 
+# Additional steps (Do only if you want to make the file run at startup)
 
 If you want to make the script run on the startup 
 edit /home/pi/.bash_profile
@@ -124,6 +126,16 @@ Next open terminal and type
 
     sudo nano /home/pi/.xinitrc
 
-and type the fillowing :
+and type the following :
 
-    
+    #!/usr/bin/env sh
+
+    exec ./4x4.sh &
+
+press ctrl+x and y and enter to save
+
+# Step 5
+
+After all restart the system 
+if you did the additional steps open any window which receives keyboard signals and press the keyboard keys 
+if you did everythng right the keys should print the ones they are mapped with
