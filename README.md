@@ -1,6 +1,7 @@
 # 4x4-membrane-driver
 # Connecting the 4x4 membrane to the raspberry pi
-
+connect the row pins of the membrane[R1 , R2 , R3 , R4 ] to the GPIO pins [6 , 13 , 19 , 26]
+connect the column pins 
 # Installation steps
 # Step 1
 
