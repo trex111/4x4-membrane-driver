@@ -1,5 +1,5 @@
-#4x4-membrane-driver
-#Hardware installation steps
+# 4x4-membrane-driver
+# Hardware installation steps
 # Connecting the 4x4 membrane to the raspberry pi
 
 (GPIO pins:pinout.png , 4x4 keyboard pinout:4x4 keyboard .png)
@@ -12,7 +12,7 @@ connect the column pins [C1 , C2 , C3 , C4] to GPIO pins [ 12 , 16 , 20 , 21 ]
     R1, R2, R3, R4 = 6, 13, 19, 26  # Row pins
     C1, C2, C3, C4 = 12, 16, 20, 21  # Column pins
 
-#Software Installation steps
+# Software Installation steps
 # Step 1
 
 Firstly install python 3 
