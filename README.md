@@ -3,13 +3,17 @@
 # Step 1
 
 Firstly install python 3 
+open terminal and type the following commands
 
     sudo apt-get update
+    
     sudo apt-get install update
+    
     sudo apt install python3
+
 # Step 2
-create a file named 4x4.py in the folder on the raspberry pi 
-write the following code on the file 
+create a file named 4x4.py in the folder on the raspberry pi(you can use python editor or Thonny(has better support for gpio) for creating). 
+write the following code on the file. 
 
     # Import required libraries
     import RPi.GPIO as GPIO
@@ -36,7 +40,7 @@ write the following code on the file
     GPIO.setup(C3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(C4, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
-    # Setup uinput device with key mappings for each button
+    # Setup uinput device with key mappings for each button(you can use any key in a keyboard just map it  here)
     device = uinput.Device([
         uinput.KEY_1, uinput.KEY_2, uinput.KEY_3, uinput.KEY_UP,
         uinput.KEY_4, uinput.KEY_5, uinput.KEY_6, uinput.KEY_DOWN,
@@ -44,7 +48,7 @@ write the following code on the file
         uinput.KEY_ENTER, uinput.KEY_0, uinput.KEY_BACKSPACE, uinput.KEY_D
     ])
     
-    # Dictionary to map keypad characters to uinput keys
+    # Dictionary to map keypad characters to uinput keys(also map the custom keys here)
     key_map = {
         "1": uinput.KEY_1, "2": uinput.KEY_2, "3": uinput.KEY_3, "A": uinput.KEY_UP,
         "4": uinput.KEY_4, "5": uinput.KEY_5, "6": uinput.KEY_6, "B": uinput.KEY_DOWN,
@@ -79,6 +83,47 @@ write the following code on the file
         print("\nApplication stopped!")
     finally:
         GPIO.cleanup()  # Reset GPIO settings on exit
+you canalso map other keys in this code 
 # Step 3
 create another file on the same folder named 4x4.sh and write the following 
+    
+    #!/bin/bash
+    python3 4x4.py
+
+press ctrl+x and y and enter to save
+# Step 4 
+make the 4x4.sh file executable.
+open terminal and type 
+
+    chmod +x 4x4.sh
+
+press enter.
+now the file should be executable 
+now you can execute the file my either double clicking or type:
+
+    bash 4x4.sh
+    or 
+    sudo exec ./4x4.sh
+
+# Additional steps 
+
+If you want to make the script run on the startup 
+edit /home/pi/.bash_profile
+
+    sudo nano /home/pi/.bash_profile
+
+and write this line 
+    
+    if [ -z $DISPLAY ] && [ $(tty) = /dev/tty1 ]
+    then
+    	startx
+    fi
+
+press ctrl+x and y and enter to save
+Next open terminal and type 
+
+    sudo nano /home/pi/.xinitrc
+
+and type the fillowing :
+
     
