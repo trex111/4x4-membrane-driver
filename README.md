@@ -151,3 +151,7 @@ Or the .xinitrc file with the code is given just download the file and paste it 
 After all steps restart the system 
 If you did the additional step , open any window which receives keyboard signals(eg:chromium,text editor) and press the keyboard keys 
 If you did everythng right the keys should print the ones they are mapped with
+
+Or just run the .sh file using terminal and the keys should pe printing
+
+(NOTE DO NOT RUN THE PROGRAM(.SH FILE OR PYTHON FILE) TWICE WITH THE FIRST TIME RUNNING IT WILL OVERLAP AND PRINT THE CHARACTERS IN DOUBLE LIKE IF YOU PRESS 'A' IT MIGHT PRINT 'AA' , ALWAYS RESTART OR CLEAN EXIT THE PROGRAM )(OR RUN THE PROGRAM IN THONNY )
