@@ -53,7 +53,7 @@ Write the following code on the file.
     GPIO.setup(C3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(C4, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     
-    # Setup uinput device with key mappings for each button(you can use any key in a keyboard just map it  here)
+    # Setup uinput device with key mappings for each button(you can use any key in a keyboard just map it here)
     device = uinput.Device([
         uinput.KEY_1, uinput.KEY_2, uinput.KEY_3, uinput.KEY_UP,
         uinput.KEY_4, uinput.KEY_5, uinput.KEY_6, uinput.KEY_DOWN,
