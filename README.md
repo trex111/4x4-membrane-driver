@@ -118,7 +118,7 @@ Now you can execute the file by either double clicking or type:
     or 
     sudo exec ./4x4.sh
 
-# Optiopnal steps (Do only if you want to make the file run at startup)
+# Optional steps (Do only if you want to make the file run at startup)
 
 If you want to make the script run on the startup 
 Edit /home/pi/.bash_profile
